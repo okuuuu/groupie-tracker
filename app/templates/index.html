@@ -1,40 +1,106 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link href="static/css/style.css" rel="stylesheet" />
-    <script src="static/js/script.js"></script>
-    <title>Groupie Tracker</title>
-  </head>
-  <body>
-    <header class="top-menu">Groupie Tracker</header>
-    <section class="page">
-      {{range .}}
-        <div class="card">
-            <div class="preview">
-                <img src={{.Image}}></img>
-            </div>
-            <div id="{{.ID}}" class="details">
-              <div class="name">{{.Name}}</div>
-              <div class="creation">
-                <span>Creation Date:</span>
-                <a>{{.CreationDate}}</a>
-              </div>
-              <div class="album">
-                <span>First Album Release:</span>
-                <a>{{.FirstAlbum}}</a>
-              </div>
-              <div class="members">
-                <span>Members:</span>
-                {{range .Members}}
-                  <p>{{.}}</p>
-                {{end}}
-              </div>
-            </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="static/css/style.css" rel="stylesheet" />
+  <script src="static/js/script.js"></script>
+  <title>Groupie Tracker</title>
+</head>
+
+<body>
+  <!-- <div class="banner">
+    groupie tracker
+  </div> -->
+  <!-- <header class="top-menu">Groupie Tracker</header> -->
+  <div class="main">
+    <!-- Navigation -->
+    <div class="navigation_wrapper">
+
+      <div class="navigation_items">
+        <div>
+          <img src="../static/assets/logo.jpg" width="250" height="250" class="logo" />
         </div>
+
+        <div class="navigation_button">
+          <div>
+            <img src="../static/assets/home.png" width="25" height="25" class="logo" />
+          </div>
+          <div>
+            <a href="#" class="a">Home</a>
+          </div>
+        </div>
+
+        <div class="navigation_button">
+          <div>
+            <img src="../static/assets/search.png" width="25" height="25" class="logo" />
+          </div>
+          <div>
+            <a href="#" class="a">Search</a>
+          </div>
+        </div>
+
+        <div class="navigation_button">
+          <div>
+            <img src="../static/assets/filter.png" width="25" height="25" class="logo" />
+          </div>
+          <div>
+            <a href="#" class="a">Filters</a>
+          </div>
+        </div>
+
+        <div class="navigation_button">
+          <div>
+            <img src="../static/assets/navigation.png" width="25" height="25" class="logo" />
+          </div>
+          <div>
+            <a href="#" class="a">Geolocalization</a>
+          </div>
+
+        
+        </div>
+        
+        <!-- <div class="search_wrapper">
+        <input type="text" />
+      </div> -->
+      
+      </div>
+    </div>
+    <!-- Navigation -->
+    
+
+
+
+    <!-- Page -->
+    <div class="page">
+      {{range .}}
+      <div class="card">
+        <div class="preview">
+          <img src={{.Image}}></img>
+        </div>
+        <div id="{{.ID}}" class="details">
+          <div class="name">{{.Name}}</div>
+          <div class="creation">
+            <span>Creation Date:</span>
+            <a>{{.CreationDate}}</a>
+          </div>
+          <div class="album">
+            <span>First Album Release:</span>
+            <a>{{.FirstAlbum}}</a>
+          </div>
+          <div class="members">
+            <span>Members:</span>
+            {{range .Members}}
+            <p>{{.}}</p>
+            {{end}}
+          </div>
+        </div>
+      </div>
       {{end}}
-    </section>
-    <footer>@ okuu & jjelisav</footer>
-  </body>
+    </div>
+  </div>
+  <footer class="footer">© okuu & jjelisav</footer>
+</body>
+
 </html>
