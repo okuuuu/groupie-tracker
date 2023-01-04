@@ -1,11 +1,18 @@
-// window.onload = function () {
-//     const card = document.querySelector('.card');
+var filterContainer = document.getElementById("filterContainer");
+var isFilterContainerOpen = false;
 
-//     card.addEventListener('mouseenter', () => {
-//     card.classList.add('hover');
-//     });
+showFilters = function () {
+    if(isFilterContainerOpen) {
+        filterContainer.style.display = "none"
+    } else {
+        filterContainer.style.display = "block"
+    }
+    isFilterContainerOpen = !isFilterContainerOpen;
+}
 
-//     card.addEventListener('mouseleave', () => {
-//     card.classList.remove('hover');
-//     });
-// }
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == filterContainer) {
+    filterContainer.style.display = "none";
+  }
+}

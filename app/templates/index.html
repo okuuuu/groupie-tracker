@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <link href="static/css/style.css" rel="stylesheet" />
-  <script src="static/js/script.js"></script>
   <title>Groupie Tracker</title>
 </head>
 
 <body>
+
   <!-- <div class="banner">
     groupie tracker
   </div> -->
@@ -46,7 +46,7 @@
             <img src="../static/assets/filter.png" width="25" height="25" class="logo" />
           </div>
           <div>
-            <a href="#" class="a">Filters</a>
+            <a href="javascript:;" onclick="showFilters();" class="a">Filters</a>
           </div>
         </div>
 
@@ -57,20 +57,21 @@
           <div>
             <a href="#" class="a">Geolocalization</a>
           </div>
-
-        
         </div>
-        
-        <!-- <div class="search_wrapper">
-        <input type="text" />
-      </div> -->
-      
       </div>
     </div>
     <!-- Navigation -->
-    
 
-
+    <div class="filter-container" id="filterContainer">
+      <div class="navigation_button">
+        <div>
+          <img src="../static/assets/navigation.png" width="25" height="25" class="logo" />
+        </div>
+        <div>
+          <a href="#" class="a">Random</a>
+        </div>
+      </div>
+    </div>
 
     <!-- Page -->
     <div class="page">
@@ -100,7 +101,10 @@
       {{end}}
     </div>
   </div>
-  <footer class="footer">© okuu & jjelisav</footer>
+  <footer class="footer">
+    <script src="static/js/script.js"></script>
+    © okuu & jjelisav
+  </footer>
 </body>
 
 </html>
