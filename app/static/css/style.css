@@ -5,8 +5,6 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: rgb(255, 255, 255);
-    /* margin: 0;
-    padding: 0; */
 }
 .footer {
     color: rgb(151, 149, 251);
@@ -17,20 +15,12 @@ body {
     display: inline-flex;
     width: 100%;
 }
-.top-menu {
-    background: linear-gradient(0deg, rgba(0,0,0,1) 25%, rgba(39,43,51,1) 80%);
-    height: 5vh;
-    line-height: 5vh;
-    font-size: 2.5rem;
-    font-weight: 900;
-}
 .page {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: space-between;
     background: rgb(255, 255, 255);
     color: rgba(0, 0, 0, 1);
-    /* padding-top: 13%; */
 }
 .card .preview,
 .card .details {
@@ -46,7 +36,6 @@ body {
     position: relative;
     perspective: 1000px;
 }
-
 .card img {
     width: 100%;
     height: auto;
@@ -85,8 +74,9 @@ body {
     display: none;
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
+    position:sticky;
+    text-align: center;
 }
-
 .navigation_wrapper {
     padding: 10px 16px;
     align-items: center;
@@ -94,7 +84,6 @@ body {
     background: rgb(198, 197, 251);
     left: 0;
 }
-
 .navigation_items {
     position: sticky;
     top: 10px;
@@ -105,40 +94,18 @@ body {
     top: 50%;
     transform: translate(0, -50%);
 }
-
 .navigation_button {
     display: inline-flex;
     align-items: center;
     padding: 10px;
     width: 200px;
 }
-
 .navigation_button:hover {
     background-color: rgb(129, 128, 193);
     border-radius: 24px;
 }
-
 .a {
     color: rgb(255, 255, 255);
     text-decoration: none; /* no underline */
     margin-left: 15px;
 }
-
-/* .banner {
-    width: 100%;
-    height: 90px;
-    font-size: 130px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    line-height: 0.7em;
-    background: rgba(0, 0, 0, 1);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
-} */
-/* 
-.band_wrapper {
-    height: 100vh;
-    width: 75%;
-    display: table;
-    margin: auto;
-    border: 1px solid black;
-} */
