@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="static/css/style.css" rel="stylesheet" />
+    <script src="static/js/script.js"></script>
+    <title>Groupie Tracker</title>
+  </head>
+  <body>
+    <header class="top-menu">Groupie Tracker</header>
+    <section class="page">
+      {{range .}}
+        <div class="card">
+            <div class="preview">
+                <img src={{.Image}}></img>
+            </div>
+            <div id="{{.ID}}" class="details">
+              <div class="name">{{.Name}}</div>
+              <div class="creation">
+                <span>Creation Date:</span>
+                <a>{{.CreationDate}}</a>
+              </div>
+              <div class="album">
+                <span>First Album Release:</span>
+                <a>{{.FirstAlbum}}</a>
+              </div>
+              <div class="members">
+                <span>Members:</span>
+                {{range .Members}}
+                  <p>{{.}}</p>
+                {{end}}
+              </div>
+            </div>
+        </div>
+      {{end}}
+    </section>
+    <footer>@ okuu & jjelisav</footer>
+  </body>
+</html>
