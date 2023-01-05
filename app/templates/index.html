@@ -9,11 +9,7 @@
 </head>
 
 <body>
-
-  <!-- <div class="banner">
-    groupie tracker
-  </div> -->
-  <!-- <header class="top-menu">Groupie Tracker</header> -->
+  <!-- Main Page -->
   <div class="main">
     <!-- Navigation -->
     <div class="navigation_wrapper">
@@ -83,27 +79,31 @@
       </div>
     </div>
     <!-- /Filter -->
+
+    <!-- Discography -->
     <div class="page">
       {{range .}}
-    <div class="container">
-      <img src={{.Image}} class="image">
-      <div class="overlay">
-        <div class="text">
-          <div id="{{.ID}}" class="details">
-            <a class="name">{{.Name}}</a>
-            <div class="subtext">
-              <span>Creation Date: </span><a>{{.CreationDate}}</a>
-            </div>
-            <div class="subtext">
-              <span>First Album Release: </span><a>{{.FirstAlbum}}</a>
+      <div class="container">
+        <img src={{.Image}} class="image">
+        <div class="overlay">
+          <div class="text">
+            <div id="{{.ID}}" class="details">
+              <a class="name">{{.Name}}</a>
+              <div class="subtext">
+                <span>Creation Date: </span><a>{{.CreationDate}}</a>
+              </div>
+              <div class="subtext">
+                <span>First Album Release: </span><a>{{.FirstAlbum}}</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      {{end}}
     </div>
-    {{end}}
-    </div>
+    <!-- /Discography -->
   </div>
+  <!-- /Main Page -->
   <footer class="footer">
     <script src="static/js/script.js"></script>
     © okuu & jjelisav
