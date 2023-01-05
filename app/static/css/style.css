@@ -17,7 +17,7 @@ body {
     background: rgb(255, 255, 255);
     color: rgba(0, 0, 0, 1);
 }
-.filter_container {
+.filter-container {
     padding: 10px 16px;
     align-items: center;
     justify-content: space-between;
@@ -62,7 +62,7 @@ body {
     text-decoration: none; /* no underline */
     margin-left: 15px;
 }
-.card_container {
+.container {
     position: relative;
     width: 25%;
     border-radius: 50%;
