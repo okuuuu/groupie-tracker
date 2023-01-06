@@ -10,8 +10,45 @@
 </head>
 
 <body>
+  <!-- <div absolute 0 0 0 0></div> -->
+  <div class="modal-card" id="modalCard">
+    <div class="headings">
+
+      <div style="display: inline-flex;">
+        <img class="modal-image" id="imageModal" src="" width="125px" height="125px" />
+        <div style="width: 350px;">
+
+          <div class="members">Artist Name: </div>
+          <div id="artistNameModal"></div>
+
+          <div class="members">Foundation Date: </div>
+          <div id="creationDateModal"></div>
+
+          <div class="members">First Album: </div>
+          <div id="firstAlbumModal"></div>
+
+          <div class="members">Members: </div>
+          <div id="membersModal"></div>
+
+          <div class="members">Concert Dates: </div>
+          <div id="datesModal"></div>
+
+          <div class="members">Concert Locations: </div>
+          <div id="locationsModal"></div>
+
+        </div>
+        <span class="close-card">&times;</span>
+      </div>
+
+      <div class="map">
+        Google Map will go here
+      </div>
+
+    </div>
+  </div>
   <!-- Main Page -->
   <div class="main">
+
     <!-- Navigation -->
     <div class="navigation_wrapper">
 
@@ -92,17 +129,26 @@
     <!-- Discography -->
     <div class="page">
       {{range .}}
-      <div class="container">
-        <img src={{.Image}} class="image">
+      <div class="container" id="card_container_{{.ID}}" onclick="openModal('{{.ID}}');">
+        <img src={{.Image}} id="discographyImage_{{.ID}}" class="image">
         <div class="overlay">
           <div class="text">
             <div id="{{.ID}}" class="details">
-              <a class="name">{{.Name}}</a>
+              <a class="name" id="artistName_{{.ID}}">{{.Name}}</a>
               <div class="subtext">
-                <span>Creation Date: </span><a>{{.CreationDate}}</a>
+                <span>Creation Date: </span><a id="creationDate_{{.ID}}">{{.CreationDate}}</a>
               </div>
               <div class="subtext">
-                <span>First Album Release: </span><a>{{.FirstAlbum}}</a>
+                <span>First Album Release: </span><a id="firstAlbum_{{.ID}}">{{.FirstAlbum}}</a>
+              </div>
+              <div class="subtext">
+                <span>Members: </span><a id="members_{{.ID}}">{{.Members}}</a>
+              </div>
+              <div class="subtext">
+                <span>Concert Dates: </span><a id="dates_{{.ID}}">{{.ConcertDates}}</a>
+              </div>
+              <div class="subtext">
+                <span>Concert Locations: </span><a id="locations_{{.ID}}">{{.Locations}}</a>
               </div>
             </div>
           </div>

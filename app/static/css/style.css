@@ -52,6 +52,7 @@ body {
     align-items: center;
     padding: 10px;
     width: 200px;
+    cursor: pointer;
 }
 .navigation_button:hover {
     background-color: rgb(129, 128, 193);
@@ -141,4 +142,74 @@ li:not(:last-child) {
     color: rgb(151, 149, 251);
     background: rgb(255, 255, 255);
     margin-left: 75px;
+}
+
+.modal-card {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.682);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    display: none;
+    backdrop-filter: blur(15px);
+    overflow: auto;
+}
+
+.close-card {
+    font-weight: bold;
+    float: right;
+}
+.close-card:hover,
+.close-card:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.headings {
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    background-color: rebeccapurple;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 24px;
+}
+.modal-image {
+    padding: 2%;
+    border-radius: 50%;
+    display: inline;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+.artist-name {
+    margin: 13% 45% 0 0;
+    padding: 0 0 0 8px;
+    color: #fff;
+    width: 200px;
+    float: right;
+}
+.members {
+    margin: 20px 50% 0 5%;
+    padding: 0 0 0 8px;
+    color: #fff;
+    width: 200px;
+}
+.map {
+    margin: 20px 50% 0 5%;
+    padding: 0 0 0 8px;
+    color: #fff;
+    width: 200px;
+    float: right;
 }
