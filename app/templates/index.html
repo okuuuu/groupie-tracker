@@ -10,79 +10,66 @@
 </head>
 
 <body>
-  <!-- <div absolute 0 0 0 0></div> -->
+  <!-- Artist Details Modal -->
   <div class="modal-card" id="modalCard">
     <div class="headings">
-
       <div style="display: inline-flex;">
         <img class="modal-image" id="imageModal" src="" width="125px" height="125px" />
         <div style="width: 350px; margin-left: 10px;">
-
           <div class="members">Artist Name: </div>
           <div id="artistNameModal"></div>
-
           <div class="members">Foundation Date: </div>
           <div id="creationDateModal"></div>
-
           <div class="members">First Album: </div>
           <div id="firstAlbumModal"></div>
-
           <div class="members">Members: </div>
           <div id="membersModal"></div>
-
           <div class="members">Concert Dates: </div>
           <div id="datesModal"></div>
-
           <div class="members">Concert Locations: </div>
           <div id="locationsModal"></div>
-
         </div>
-        <span class="close-card">&times;</span>
+        <span style="position:fixed; margin-left: 970px;" class="close-card">&times;</span>
       </div>
 
       <div class="map">
-        Google Map will go here
+        Google Map will go here:
+        <img src="../static/assets/where.png" width="350px" height="350px" />
       </div>
 
     </div>
   </div>
+  <!-- /Artist Details Modal -->
+
   <!-- Main Page -->
   <div class="main">
-
     <!-- Navigation -->
     <div class="navigation_wrapper">
-
       <div class="navigation_items">
         <div>
-          <img src="../static/assets/logo.png" width="250" height="250" class="logo" />
+          <img src="../static/assets/logo.png" width="250px" height="250px" class="logo" />
         </div>
         <!-- Home -->
-        <div class="navigation_button">
+        <a href="http://localhost:8080" class="navigation_button">
           <div>
             <img src="../static/assets/home.png" width="25" height="25" class="logo" />
           </div>
-          <div>
-            <a href="http://localhost:8080" class="a">Home</a>
-          </div>
-        </div>
+          <div style="margin-left:18px">Home</div>
+        </a>
         <!-- Search -->
-        <div class="navigation_button">
+        <a href="#" class="navigation_button">
           <div>
             <img src="../static/assets/search.png" width="25" height="25" class="logo" />
           </div>
-          <div>
-            <a href="#" class="a">Search</a>
-          </div>
-        </div>
+          <div style="margin-left:18px">Search</div>
+        </a>
         <!-- Filters -->
-        <div class="navigation_button">
+        <a href="javascript:;" onclick="showFilters();" class="navigation_button">
           <div>
             <img src="../static/assets/filter.png" width="25" height="25" class="logo" />
           </div>
-          <div>
-            <a href="javascript:;" onclick="showFilters();" class="a">Filters</a>
-          </div>
-        </div>
+          <div style="margin-left:18px">Filters</div>
+        </a>
         <!-- Geoloc might add it might not-->
         <!-- <div class="navigation_button">
           <div>
@@ -93,11 +80,11 @@
           </div>
         </div> -->
         <!-- Credits -->
-        <div class="navigation_button">
+        <a href="javascript:;" id="myBtn" class="navigation_button">
           <div>
             <img src="../static/assets/credits.png" width="25" height="25" class="logo" />
           </div>
-          <a href="javascript:;" id="myBtn" class="a">Credits</a>
+          <div style="margin-left:18px">Credits</div>
           <div id="myModal" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
@@ -108,7 +95,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
     <!-- /Navigation -->

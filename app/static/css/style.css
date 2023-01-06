@@ -53,6 +53,9 @@ body {
     padding: 10px;
     width: 200px;
     cursor: pointer;
+    color: rgb(255, 255, 255);
+    text-decoration: none; /* no underline */
+    /* margin-left: 15px; */
 }
 .navigation_button:hover {
     background-color: rgb(129, 128, 193);
@@ -144,7 +147,6 @@ li:not(:last-child) {
     background: rgb(255, 255, 255);
     margin-left: 75px;
 }
-
 .modal-card {
     width: 100%;
     height: 100%;
@@ -158,13 +160,11 @@ li:not(:last-child) {
     z-index: 1;
     display: none;
     backdrop-filter: blur(15px);
-    overflow: auto;
 }
-
 .close-card {
     font-weight: bold;
     float: right;
-    margin-left: 425px;
+    margin-left: 440px;
     margin-top: 10px;
 }
 .close-card:hover,
@@ -173,7 +173,6 @@ li:not(:last-child) {
     text-decoration: none;
     cursor: pointer;
 }
-
 .headings {
     width: 1000px;
     height: 700px;
@@ -185,16 +184,16 @@ li:not(:last-child) {
     bottom: 0;
     margin: auto;
     border-radius: 24px;
+    overflow-y: auto;
 }
 .modal-image {
-    padding: 2%;
+    padding: 10px;
     border-radius: 50%;
     display: inline;
     background-color: rgb(151, 149, 251);
     margin-left: 3%;
     margin-top: 3%;
 }
-
 .artist-name {
     margin: 13% 45% 0 0;
     padding: 0 0 0 8px;
