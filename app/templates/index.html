@@ -16,7 +16,7 @@
 
       <div style="display: inline-flex;">
         <img class="modal-image" id="imageModal" src="" width="125px" height="125px" />
-        <div style="width: 350px;">
+        <div style="width: 350px; margin-left: 10px;">
 
           <div class="members">Artist Name: </div>
           <div id="artistNameModal"></div>
@@ -141,13 +141,16 @@
               <div class="subtext">
                 <span>First Album Release: </span><a id="firstAlbum_{{.ID}}">{{.FirstAlbum}}</a>
               </div>
-              <div class="subtext">
-                <span>Members: </span><a id="members_{{.ID}}">{{.Members}}</a>
+              <div class="hidden">
+                <span>Members: </span><a id="members_{{.ID}}"> {{range .Members}}
+                  <p>{{.}}</p>
+                  {{end}}
+                </a>
               </div>
-              <div class="subtext">
+              <div class="hidden">
                 <span>Concert Dates: </span><a id="dates_{{.ID}}">{{.ConcertDates}}</a>
               </div>
-              <div class="subtext">
+              <div class="hidden">
                 <span>Concert Locations: </span><a id="locations_{{.ID}}">{{.Locations}}</a>
               </div>
             </div>
