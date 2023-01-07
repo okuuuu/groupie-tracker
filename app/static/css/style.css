@@ -182,25 +182,33 @@ li:not(:last-child) {
     overflow-y: auto;
 }
 .modal-image {
-    padding: 10px;
     border-radius: 50%;
-    display: inline;
-    background-color: rgb(151, 149, 251);
-    margin-left: 3%;
-    margin-top: 3%;
+    display: table;
+    margin: auto;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.artist-name {
-    margin: 13% 45% 0 0;
-    padding: 0 0 0 8px;
-    color: #fff;
-    width: 200px;
-    float: right;
+.details1 {
+    margin: 20px;
 }
-.members {
-    margin: 20px 50% 0 5%;
-    padding: 0 0 0 8px;
-    color: #fff;
+.details2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: red
+}
+.details-title {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color:  rgb(249, 224, 154);
     width: 200px;
+    font-weight: 700;
+    font-size: 16px;
+    text-shadow: 2px 2px #000000;
+}
+.details-text {
+    margin-left: 10px;
+    margin-top: 2px;
+    font-weight: 500;
+    font-size: 14px;
 }
 .hidden {
     display: none;

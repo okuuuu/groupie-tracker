@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
@@ -15,29 +15,38 @@
 
 <body>
   <!-- Artist Details Modal -->
-  <div class="modal-card" id="modalCard">
-    <div class="headings">
-      <div style="display: inline-flex;">
-        <img class="modal-image" id="imageModal" src="" width="125px" height="125px" />
-        <div style="width: 350px; margin-left: 10px;">
-          <div class="members">Artist Name: </div>
-          <div id="artistNameModal"></div>
-          <div class="members">Foundation Date: </div>
-          <div id="creationDateModal"></div>
-          <div class="members">First Album: </div>
-          <div id="firstAlbumModal"></div>
-          <div class="members">Members: </div>
-          <div id="membersModal"></div>
-          <div class="members">Concert Dates: </div>
-          <div id="datesModal"></div>
-          <div class="members">Concert Locations: </div>
-          <div id="locationsModal"></div>
+  <div class="modal-card" id="modalCard"> <!-- Modal Backdrop -->
+    <div class="headings"> <!-- Modal Inside -->
+      <div style="display: inline-flex">
+        <!-- Details 1 -->
+        <div class="details1">
+          <img class="modal-image" id="imageModal" src="" width="125px" height="125px" />
+          <div style="margin-left: 10px;">
+            <div class="details-title">Artist Name</div>
+            <div id="artistNameModal" class="details-text"></div>
+            <div class="details-title">Foundation Date</div>
+            <div id="creationDateModal" class="details-text"></div>
+            <div class="details-title">First Album</div>
+            <div id="firstAlbumModal" class="details-text"></div>
+            <div class="details-title">Members</div>
+            <div id="membersModal" class="details-text"></div>
+          </div>
         </div>
+        <!-- Details 2 -->
+        <div class="details2">
+          <div class="details-title">Concert Dates</div>
+          <div id="datesModal" class="details-text"></div>
+          <div class="details-title">Concert Locations</div>
+          <div id="locationsModal" class="details-text"></div>
+
+        </div>
+        <!-- Close Modal -->
         <span style="position:fixed; margin-left: 970px;" class="close-card">&times;</span>
       </div>
       <!-- Map -->
-      <div id="map"></div>
-    </div>
+      <div id="map" style="margin-top:15px"></div>
+    </div> <!-- End of Modal -->
+  </div>
   </div>
   <!-- /Artist Details Modal -->
 
@@ -47,7 +56,7 @@
     <div class="navigation_wrapper">
       <div class="navigation_items">
         <div>
-          <img src="../static/assets/logo.png" width="250px" height="250px" class="logo" />
+          <img src="../static/assets/logo.png" width="250" height="250" class="logo" />
         </div>
         <!-- Home -->
         <a href="http://localhost:8080" class="navigation_button">
