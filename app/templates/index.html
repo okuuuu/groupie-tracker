@@ -4,9 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
   <link href="static/css/style.css" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="../static/assets/note.png" />
   <title>Groupie Tracker</title>
+  <link rel="icon" type="image/png" href="../static/assets/note.png" />
 </head>
 
 <body>
@@ -31,12 +35,8 @@
         </div>
         <span style="position:fixed; margin-left: 970px;" class="close-card">&times;</span>
       </div>
-
-      <div class="map">
-        Google Map will go here:
-        <img src="../static/assets/where.png" width="350px" height="350px" />
-      </div>
-
+      <!-- Map -->
+      <div id="map"></div>
     </div>
   </div>
   <!-- /Artist Details Modal -->
@@ -80,22 +80,21 @@
           </div>
         </div> -->
         <!-- Credits -->
-        <a href="javascript:;" id="myBtn" class="navigation_button">
+        <a id="creditsButton" class="navigation_button">
           <div>
             <img src="../static/assets/credits.png" width="25" height="25" class="logo" />
           </div>
           <div style="margin-left:18px">Credits</div>
-          <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <ul>
-                <li>Cute Astronauts by catalyststuff (freepik.com)</li>
-                <li>Navigation icons by inkubators (icons8.com)</li>
-                <li>Favicon by Icons8 (icons8.com)</li>
-              </ul>
-            </div>
-          </div>
         </a>
+        <div class="modal" id="modalCredits">
+          <span class="close">&times;</span>
+          <ul>
+            <li>Cute Astronauts by catalyststuff (freepik.com)</li>
+            <li>Navigation icons by inkubators (icons8.com)</li>
+            <li>Favicon by Icons8 (icons8.com)</li>
+          </ul>
+        </div>
+        <!-- /Credits -->
       </div>
     </div>
     <!-- /Navigation -->

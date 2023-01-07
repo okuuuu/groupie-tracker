@@ -108,24 +108,19 @@ body {
     font-size: 1vw;
 }
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-}
-.modal-content {
     background-color: rgb(129, 128, 193);
-    padding: 20px;
+    padding: 23px;
     border: 1px solid rgb(0, 0, 0);
     width: 80%;
     border-radius: 24px;
     text-align: left;
     font-size: 15px;
-    margin: 55% auto;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin-top: 140px;
 }
 .close {
     font-weight: bold;
@@ -207,13 +202,12 @@ li:not(:last-child) {
     color: #fff;
     width: 200px;
 }
-.hidden{
+.hidden {
     display: none;
 }
-.map {
-    margin: 20px 50% 0 5%;
-    padding: 0 0 0 8px;
-    color: #fff;
-    width: 200px;
-    float: right;
+#map {
+    height: 320px;
+    width: 920px;
+    margin: auto auto 30px;
+    border-radius: 10px;
 }
