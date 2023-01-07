@@ -23,16 +23,16 @@ type Artist struct {
 // ArtistsArray represents an array of artists
 type ArtistsArray []Artist
 
-type Location struct {
-	ID        int      `json:"id"`
-	Locations []string `json:"locations"`
-	Dates     string   `json:"dates"`
-}
+// type Location struct {
+// 	ID        int      `json:"id"`
+// 	Locations []string `json:"locations"`
+// 	Dates     string   `json:"dates"`
+// }
 
-type Date struct {
-	ID    int      `json:"id"`
-	Dates []string `json:"dates"`
-}
+// type Date struct {
+// 	ID    int      `json:"id"`
+// 	Dates []string `json:"dates"`
+// }
 
 // Relation represents a relation between dates and locations
 type Relation struct {
@@ -62,4 +62,26 @@ func GetArtists() (*ArtistsArray, error) {
 
 	// Return the artists array
 	return artists, nil
+}
+
+func GetRelation(number int) (*Relation, error) {
+	endpoint := endpointRelation
+
+	options := map[string]interface{}{
+		"endpoint": endpoint,
+		"params": map[string]int{
+			"integer": number,
+		},
+	}
+
+	relation := new(Relation)
+
+	err := makePetition(options, &relation)
+	if err != nil {
+		return &Relation{}, err
+	}
+
+	formatConcerts(&relation)
+
+	return relation, nil
 }

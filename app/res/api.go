@@ -3,6 +3,7 @@ package res
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
 	"time"
 )
 
@@ -18,6 +19,15 @@ func makePetition(options map[string]interface{}, response interface{}) error {
 		case string:
 			if k == "endpoint" {
 				endpoint = v.(string)
+			}
+
+		case map[string]int:
+			if k == "params" {
+				// Modify the URL, i.e. the endpoint
+				integer := strconv.FormatInt(int64(v.(map[string]int)["integer"]), 10)
+				endpoint = endpoint + "/" + integer
+				// Delete the parameters
+				delete(options, "params")
 			}
 		}
 	}

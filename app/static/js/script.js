@@ -47,27 +47,11 @@ spanCard.onclick = function() {
 }
 
 openModal = function(id) {
-  setTimeout(function () {
-    map.setZoom(1);
-    window.dispatchEvent(new Event('resize'));
-}, 1000);
-  artistName = document.getElementById(`artistName_${id}`).innerHTML;
-  creationDate = document.getElementById(`creationDate_${id}`).innerHTML;
-  firstAlbum = document.getElementById(`firstAlbum_${id}`).innerHTML;
-  members = document.getElementById(`members_${id}`).innerHTML;
-  dates = document.getElementById(`dates_${id}`).innerHTML;
-  locations = document.getElementById(`locations_${id}`).innerHTML;
-  imageSrc = document.getElementById(`discographyImage_${id}`).src;
-
-  document.getElementById('artistNameModal').innerHTML = artistName;
-  document.getElementById('creationDateModal').innerHTML = creationDate;
-  document.getElementById('firstAlbumModal').innerHTML = firstAlbum;
-  document.getElementById('membersModal').innerHTML = members;
-  document.getElementById('datesModal').innerHTML = dates;
-  document.getElementById('locationsModal').innerHTML = locations;
-  document.getElementById('imageModal').src = imageSrc;
-
-  modalCard.style.display = "block";
+  //   setTimeout(function () {
+  //     map.setZoom(1);
+  //     window.dispatchEvent(new Event('resize'));
+  // }, 1000);
+  document.getElementById(`modal_${id}`).submit()
 }
 
 // Map

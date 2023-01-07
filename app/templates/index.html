@@ -15,32 +15,38 @@
 
 <body>
   <!-- Artist Details Modal -->
-  <div class="modal-card" id="modalCard"> <!-- Modal Backdrop -->
-    <div class="headings"> <!-- Modal Inside -->
-      <div style="display: inline-flex">
-        <!-- Details 1 -->
+  <div class="modal-card" id="modalCard" style="display: {{.display}};">
+    <div class="headings">
+      <div style="display: inline-flex;">
+          {{with .artist}}
         <div class="details1">
-          <img class="modal-image" id="imageModal" src="" width="125px" height="125px" />
+          <img class="modal-image" id="imageModal" src={{.Image}} width="125px" height="125px" />
           <div style="margin-left: 10px;">
-            <div class="details-title">Artist Name</div>
-            <div id="artistNameModal" class="details-text"></div>
-            <div class="details-title">Foundation Date</div>
-            <div id="creationDateModal" class="details-text"></div>
-            <div class="details-title">First Album</div>
-            <div id="firstAlbumModal" class="details-text"></div>
-            <div class="details-title">Members</div>
-            <div id="membersModal" class="details-text"></div>
+            <div class="details-title">Artist Name: </div>
+            <div id="artistNameModal">{{.Name}}</div>
+            <div class="details-title">Foundation Date: </div>
+            <div id="creationDateModal">{{.CreationDate}}</div>
+            <div class="details-title">First Album: </div>
+            <div id="firstAlbumModal">{{.FirstAlbum}}</div>
+            <div class="details-title">Members: </div>
+            <div id="membersModal">
+                {{range .Members}}
+                  <p>{{.}}</p>
+                {{end}}
+            </div>
+            {{end}}
           </div>
         </div>
-        <!-- Details 2 -->
         <div class="details2">
-          <div class="details-title">Concert Dates</div>
-          <div id="datesModal" class="details-text"></div>
-          <div class="details-title">Concert Locations</div>
-          <div id="locationsModal" class="details-text"></div>
-
+          <div class="details-concerts">Concerts: </div>
+          <div id="concertsModal">
+            {{with .relation}}
+            {{range $loc, $dates := .DatesLocations}}
+              <p>{{$loc}}: {{range $i, $k := $dates}}{{if $i}}, {{end}}{{$k}}{{end}}</p>
+            {{end}}
+            {{end}}
+          </div>
         </div>
-        <!-- Close Modal -->
         <span style="position:fixed; margin-left: 970px;" class="close-card">&times;</span>
       </div>
       <!-- Map -->
@@ -50,7 +56,7 @@
   </div>
   <!-- /Artist Details Modal -->
 
-  <!-- Main Page -->
+    <!-- Main Page -->
   <div class="main">
     <!-- Navigation -->
     <div class="navigation_wrapper">
@@ -123,9 +129,13 @@
 
     <!-- Discography -->
     <div class="page">
+      {{with .artists}}
       {{range .}}
       <div class="container" id="card_container_{{.ID}}" onclick="openModal('{{.ID}}');">
         <img src={{.Image}} id="discographyImage_{{.ID}}" class="image">
+        <form id="modal_{{.ID}}" method="POST" action="/">
+          <input type="hidden" name="artistID" value="{{.ID}}">
+        </form>
         <div class="overlay">
           <div class="text">
             <div id="{{.ID}}" class="details">
@@ -136,22 +146,11 @@
               <div class="subtext">
                 <span>First Album Release: </span><a id="firstAlbum_{{.ID}}">{{.FirstAlbum}}</a>
               </div>
-              <div class="hidden">
-                <span>Members: </span><a id="members_{{.ID}}"> {{range .Members}}
-                  <p>{{.}}</p>
-                  {{end}}
-                </a>
-              </div>
-              <div class="hidden">
-                <span>Concert Dates: </span><a id="dates_{{.ID}}">{{.ConcertDates}}</a>
-              </div>
-              <div class="hidden">
-                <span>Concert Locations: </span><a id="locations_{{.ID}}">{{.Locations}}</a>
-              </div>
             </div>
           </div>
         </div>
       </div>
+      {{end}}
       {{end}}
     </div>
     <!-- /Discography -->

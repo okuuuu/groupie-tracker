@@ -5,14 +5,10 @@ import (
 	"main/res"
 	"net/http"
 	"regexp"
+	"strconv"
 )
 
-// Ascii represents the ASCII art entity.
-type Ascii struct {
-	Word   string
-	Art    string
-	Banner string
-}
+type M map[string]interface{}
 
 // HomeHandler handles the home page request.
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
@@ -21,11 +17,30 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte("500 Internal Server Error!\n" + err.Error()))
 	}
+	var artistNumber int
+	var display string
+	if r.Method == "POST" {
+		artistNumber, _ = strconv.Atoi(r.FormValue("artistID"))
+		display = "block"
+	} else {
+		artistNumber = 1
+		display = "none"
+	}
+	relation, err := res.GetRelation(artistNumber)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte("500 Internal Server Error!\n" + err.Error()))
+	}
 
-	renderTemplate(w, "index", artists)
+	renderTemplate(w, "index", M{
+		"artist":   (*artists)[artistNumber-1],
+		"artists":  artists,
+		"relation": relation,
+		"display":  display,
+	})
 }
 
-var validPath = regexp.MustCompile("^/(concerts|$)")
+var validPath = regexp.MustCompile("^/($)")
 
 // MakeHandler creates a handler function.
 func MakeHandler(fn func(http.ResponseWriter, *http.Request)) http.HandlerFunc {
@@ -42,7 +57,7 @@ func MakeHandler(fn func(http.ResponseWriter, *http.Request)) http.HandlerFunc {
 var templates = template.Must(template.ParseFiles("templates/index.html"))
 
 // renderTemplate renders the given template with the given data.
-func renderTemplate(w http.ResponseWriter, tmpl string, p interface{}) {
+func renderTemplate(w http.ResponseWriter, tmpl string, p any) {
 	err := templates.ExecuteTemplate(w, tmpl+".html", p)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
