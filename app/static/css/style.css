@@ -5,6 +5,9 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .main {
     display: inline-flex;
@@ -146,7 +149,7 @@ li:not(:last-child) {
     width: 100%;
     height: 100%;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.682);
+    background-color: rgba(0, 0, 0, 0.766);
     left: 0;
     right: 0;
     top: 0;
@@ -178,26 +181,42 @@ li:not(:last-child) {
     bottom: 0;
     margin: auto;
     border-radius: 24px;
-    overflow-y: auto;
+    overflow: auto;
+}
+.headings::-webkit-scrollbar {
+    width: 10px;
+}
+.headings::-webkit-scrollbar-thumb {
+    background: #c2c9d23d;
+    border-radius: 100px;
+}
+.headings::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 25px;
+}
+.headings::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 25px;
 }
 .modal-image {
     border-radius: 50%;
     display: table;
     margin: auto;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    -webkit-box-shadow: 0 0 19px 10px rgba(255, 255, 255, 0.396);
+    -moz-box-shadow: 0 0 19px 10px rgba(255, 255, 255, 0.396);
+    box-shadow: 0 0 19px 10px rgba(255, 255, 255, 0.396);
 }
 .details1 {
-    margin: 20px;
+    margin: 20px 20px 20px 40px;
 }
 .details2 {
     margin-top: 20px;
     margin-bottom: 20px;
-    background: red
 }
 .details-title {
     margin-top: 15px;
     margin-bottom: 5px;
-    color:  rgb(249, 224, 154);
+    color: rgb(249, 224, 154);
     width: 200px;
     font-weight: 700;
     font-size: 16px;
@@ -208,6 +227,38 @@ li:not(:last-child) {
     margin-top: 2px;
     font-weight: 500;
     font-size: 14px;
+    color: black;
+}
+.ticket {
+    position: relative;
+    box-sizing: border-box;
+    width: 300px;
+    height: auto;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgb(249, 224, 154);
+    font-size: 14px;
+    color: black;
+    -webkit-box-shadow: 0 0 5px 2px #fff;
+    -moz-box-shadow: 0 0 5px 2px #fff;
+    box-shadow: 0 0 5px 2px #fff;
+}
+.ticket:before,
+.ticket:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    height: 6px;
+    width: 290px;
+}
+.ticket:before {
+    top: -5px;
+    background: radial-gradient(circle, transparent, transparent 50%,#ffc107 50%, #ffc107 100%) -7px -8px / 16px 16px repeat-x;
+}
+.ticket:after {
+    bottom: -5px;
+    background: radial-gradient(circle, transparent, transparent 50%, #ffc107 50%, #ffc107 100%) -7px -2px / 16px 16px repeat-x;
 }
 .hidden {
     display: none;

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta name="viewport" content="width=device-width, initial-scale=0.3">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
@@ -18,7 +18,7 @@
   <div class="modal-card" id="modalCard" style="display: {{.display}};">
     <div class="headings">
       <div style="display: inline-flex;">
-          {{with .artist}}
+        {{with .artist}}
         <div class="details1">
           <img class="modal-image" id="imageModal" src={{.Image}} width="125px" height="125px" />
           <div style="margin-left: 10px;">
@@ -30,19 +30,19 @@
             <div id="firstAlbumModal">{{.FirstAlbum}}</div>
             <div class="details-title">Members: </div>
             <div id="membersModal">
-                {{range .Members}}
-                  <p>{{.}}</p>
-                {{end}}
+              {{range .Members}}
+              <p>{{.}}</p>
+              {{end}}
             </div>
             {{end}}
           </div>
         </div>
         <div class="details2">
-          <div class="details-concerts">Concerts: </div>
-          <div id="concertsModal">
+          <div class="details-title">Concerts: </div>
+          <div id="concertsModal" style="display: grid; grid-template-columns: 200px 200px; column-gap: 150px;">
             {{with .relation}}
             {{range $loc, $dates := .DatesLocations}}
-              <p>{{$loc}}: {{range $i, $k := $dates}}{{if $i}}, {{end}}{{$k}}{{end}}</p>
+            <p class="ticket">{{$loc}}: {{range $i, $k := $dates}}{{if $i}}, {{end}}{{$k}}{{end}}</p>
             {{end}}
             {{end}}
           </div>
@@ -50,13 +50,14 @@
         <span style="position:fixed; margin-left: 970px;" class="close-card">&times;</span>
       </div>
       <!-- Map -->
+      <div id="locations">{{.Location}}</div>
       <div id="map" style="margin-top:15px"></div>
     </div> <!-- End of Modal -->
   </div>
   </div>
   <!-- /Artist Details Modal -->
 
-    <!-- Main Page -->
+  <!-- Main Page -->
   <div class="main">
     <!-- Navigation -->
     <div class="navigation_wrapper">

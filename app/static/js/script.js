@@ -39,7 +39,7 @@ span.onclick = function() {
 }
 
 // Modal Card
-var modalCard = document.getElementById("modalCard")
+var modalCard = document.getElementById("modalCard");
 var spanCard = document.getElementsByClassName("close-card")[0];
 
 spanCard.onclick = function() {
@@ -47,39 +47,13 @@ spanCard.onclick = function() {
 }
 
 openModal = function(id) {
-  //   setTimeout(function () {
-  //     map.setZoom(1);
-  //     window.dispatchEvent(new Event('resize'));
-  // }, 1000);
   document.getElementById(`modal_${id}`).submit()
 }
 
 // Map
-var locations = [
-  {
-    Name: 'Paris, France',
-    Latitude: 48.856614,
-    Longitude: 2.3522219,
-    Type: 'city',
-    Importance: 0.9
-  },
-  {
-    Name: 'New York, USA',
-    Latitude: 40.7127753,
-    Longitude: -74.0059728,
-    Type: 'city',
-    Importance: 0.9
-  },
-  {
-    Name: 'Tokyo, Japan',
-    Latitude: 35.6894875,
-    Longitude: 139.6917064,
-    Type: 'city',
-    Importance: 0.9
-  }
-];
+var locations = document.getElementById("locations");
+var map = L.map('map').setView([51.505, -0.09], 13).setZoom(1);
 
-var map = L.map('map').setView([51.505, -0.09], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 6,
     minZoom: 1,
