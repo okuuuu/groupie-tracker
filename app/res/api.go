@@ -18,7 +18,7 @@ func makePetition(options map[string]interface{}, response interface{}) error {
 		switch v.(type) {
 		case string:
 			if k == "endpoint" {
-				endpoint = v.(string)
+				endpoint = v.(string) + endpoint
 			}
 
 		case map[string]int:

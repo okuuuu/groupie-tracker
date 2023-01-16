@@ -47,7 +47,7 @@ spanCard.onclick = function() {
 }
 
 openModal = function(id) {
-  document.getElementById(`modal_${id}`).submit()
+  document.getElementById(`modal_${id}`).submit();
 }
 
 // Map
