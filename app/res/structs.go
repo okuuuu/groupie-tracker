@@ -1,5 +1,7 @@
 package res
 
+import "fmt"
+
 // Endpoints represents the API endpoints
 type Endpoints struct {
 	Artists   string `json:"artists"`
@@ -20,19 +22,14 @@ type Artist struct {
 	Relations    string   `json:"relations"`
 }
 
+type Coordinate struct {
+	Lat      float64 `json:"lat"`
+	Lng      float64 `json:"lng"`
+	Location string  `json:"location"`
+}
+
 // ArtistsArray represents an array of artists
 type ArtistsArray []Artist
-
-// type Location struct {
-// 	ID        int      `json:"id"`
-// 	Locations []string `json:"locations"`
-// 	Dates     string   `json:"dates"`
-// }
-
-// type Date struct {
-// 	ID    int      `json:"id"`
-// 	Dates []string `json:"dates"`
-// }
 
 // Relation represents a relation between dates and locations
 type Relation struct {
@@ -84,4 +81,23 @@ func GetRelation(number int) (*Relation, error) {
 	formatConcerts(&relation)
 
 	return relation, nil
+}
+
+func GetCoordinates(artistNumber int) []Coordinate {
+	endpoint := endpointRelation
+
+	options := map[string]interface{}{
+		"endpoint": endpoint,
+		"params": map[string]int{
+			"integer": artistNumber,
+		},
+	}
+	relation := new(Relation)
+
+	makePetition(options, &relation)
+
+	updMap := createUpdMap(&relation)
+
+	fmt.Print(updMap)
+	return addressToGeoCode(updMap)
 }

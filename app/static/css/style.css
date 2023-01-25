@@ -19,19 +19,6 @@ body {
     background: rgb(255, 255, 255);
     color: rgba(0, 0, 0, 1);
 }
-.filter-container {
-    padding: 10px 16px;
-    align-items: center;
-    justify-content: space-between;
-    background: rgb(129, 128, 193);
-    left: 0;
-    box-sizing: border-box;
-    display: none;
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
-    position: sticky;
-    text-align: center;
-}
 .navigation_wrapper {
     padding: 10px 16px;
     align-items: center;
